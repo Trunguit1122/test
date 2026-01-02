@@ -37,3 +37,6 @@ coverage/
 screenshots/
 downloads/
 test-results/
+*.deb
+*.rpm
+*.dmg

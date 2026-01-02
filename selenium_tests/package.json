@@ -1,0 +1,78 @@
+{
+  "name": "lingolab-selenium-tests",
+  "version": "1.0.0",
+  "description": "Selenium WebDriver automation tests for LingoLab IELTS Practice",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --runInBand",
+    "test:smoke": "jest --runInBand --testPathPattern=smoke",
+    "test:signup": "jest --runInBand src/tests/signup.test.ts",
+    "test:signin": "jest --runInBand src/tests/signin.test.ts",
+    "test:profile": "jest --runInBand src/tests/profile.test.ts",
+    "test:speaking": "jest --runInBand src/tests/speaking.test.ts",
+    "test:writing": "jest --runInBand src/tests/writing.test.ts",
+    "test:teacher": "jest --runInBand src/tests/teacher.test.ts",
+    "test:history": "jest --runInBand src/tests/history.test.ts",
+    "test:progress": "jest --runInBand src/tests/progress.test.ts",
+    "test:statistics": "jest --runInBand src/tests/statistics.test.ts",
+    "test:report": "jest --runInBand --reporters=default --reporters=jest-html-reporter",
+    "lint": "eslint src/**/*.ts",
+    "clean": "rm -rf dist reports/*.html"
+  },
+  "keywords": [
+    "selenium",
+    "webdriver",
+    "testing",
+    "automation",
+    "ielts"
+  ],
+  "author": "LingoLab Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.10.6",
+    "@types/selenium-webdriver": "^4.35.4",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "chromedriver": "^143.0.3",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "jest-html-reporter": "^3.10.2",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "dotenv": "^16.3.1",
+    "selenium-webdriver": "^4.16.0"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testTimeout": 60000,
+    "verbose": true,
+    "testMatch": [
+      "**/tests/**/*.test.ts"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/utils/setup.ts"
+    ],
+    "reporters": [
+      "default",
+      [
+        "jest-html-reporter",
+        {
+          "pageTitle": "LingoLab Selenium Test Report",
+          "outputPath": "reports/test-report.html",
+          "includeFailureMsg": true,
+          "includeSuiteFailure": true
+        }
+      ]
+    ]
+  }
+}
