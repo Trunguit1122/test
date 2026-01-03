@@ -8,23 +8,10 @@ import { TEST_USERS } from '../utils/testData';
 import { MESSAGES } from '../config/messages';
 
 /**
- * Automation Tests for REQ063 to REQ075 (Practice History, Progress, Logout, Statistics)
+ * Progress & Statistics Tests (REQ063, REQ064, REQ067, REQ068, REQ069)
  * Test Cases: FUC-198 to FUC-205
- * 
- * Features Tested:
- * - REQ063: Retake Functionality & AttemptID Management
- * - REQ064: Logout without Confirmation
- * - REQ067: Statistics Filtering by Date Range & Skill
- * - REQ068: Score Trend & Attempt Count Charts
- * - REQ069: No Data State Handling
- * - REQ070: Score Breakdown Display
- * - REQ071: Teacher Progress Reports
- * - REQ072: Learner Status Management
- * - REQ073: Additional Statistics Features
- * - REQ074: Advanced Filtering
- * - REQ075: Export/Additional Features
  */
-describe('Progress & Statistics Tests (REQ063-REQ075)', () => {
+describe('REQ063-REQ069: Retake, Logout & Statistics', () => {
   let driver: WebDriver;
   let practiceHistoryPage: PracticeHistoryPage;
   let progressPage: ProgressPage;
